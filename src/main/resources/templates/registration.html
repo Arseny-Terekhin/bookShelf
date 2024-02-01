@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf6uWEpAAAAAHEdosNu1R0GZ-N_iy9Ky0uw23_e"></script>
+</head>
+
+<body>
+<div>
+    <fform th:method="POST" th:action="@{/registrtaion}" th:object="${user}">
+        <h2>Регистрация</h2>
+        <label for="email">Почта: </label>
+        <input type="text" th:field="*{email}" id="email">
+        <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        <label for="pass">Пароль: </label>
+        <input type="text" th:field="*{password}" id="pass">
+        <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+    </fform>
+    <div class="demo">
+        <div class="g-recaptcha" data-sitekey="6Lf6uWEpAAAAAHEdosNu1R0GZ-N_iy9Ky0uw23_e"></div>
+    </div>
+
+</div>
+</body>
+</html>
