@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.Set;
 
 @Entity
-@Table(schema = "usr")
+@Table(name = "usr")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,7 +29,6 @@ public class User implements UserDetails {
     private String email;
     @NotBlank(message = "Введите пароль")
     private String password;
-    private boolean action;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;

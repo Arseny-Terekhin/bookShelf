@@ -2,24 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Регистрация</title>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <title>Авторизация</title>
 </head>
 
 <body>
 <div>
-    <fform th:method="POST" th:action="@{/registrtaion}" th:object="${user}">
-        <h2>Регистрация</h2>
+    <fform th:method="POST" th:action="@{/login}" th:object="${user}">
+        <h2>Авторизация</h2>
         <label for="email">Почта: </label><br>
         <input type="text" th:field="*{email}" id="email">
         <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
         <label for="pass">Пароль: </label><br>
         <input type="text" th:field="*{password}" id="pass">
         <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div><br>
-        <div><input type="submit" value="Зарегистрироваться"/></div>
+        <div><input type="submit" value="Войти"/></div>
     </fform>
-
-
+    <a href="/registration"Зарегистрироваться</a>
 </div>
 </body>
 </html>

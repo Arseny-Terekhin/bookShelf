@@ -23,7 +23,7 @@ public class UserService implements UserDetailsService {
      BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public boolean saveUser(User user) {
-        User userFromDB = (User) userRepository.findByEmail(user.getEmail());
+        User userFromDB = userRepository.findByEmail(user.getEmail());
 
         if (userFromDB != null) {
             return false;

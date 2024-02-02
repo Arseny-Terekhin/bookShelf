@@ -10,7 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import java.util.Set;
 
 @Entity
-@Table(schema = "role")
+@Table(name = "role")
 @Getter
 @Setter
 @NoArgsConstructor
